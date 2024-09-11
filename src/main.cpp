@@ -23,15 +23,29 @@ int main()
 
     // Error throw & catch
     MyVector error01;
+    const MyVector error02;
     try {
         error01.erase(10);
-    } catch(const exception& e) {
+    } catch(const exception& e) { // out_of_range
         cerr << e.what() << endl;
     }
 
     try {
         error01.remove(10);
-    } catch(const exception& e) {
+    } catch(const exception& e) { // logic_error (value not found)
+        cerr << e.what() << endl;
+    }
+
+    try {
+        error01.at(100)++;
+    } catch(const exception& e) { // out_of_range
+        cerr << e.what() << endl;
+    }
+
+    try {
+        int x = error02.at(100);
+        cout << x;
+    } catch(const exception& e) { // out_of_range
         cerr << e.what() << endl;
     }
 }

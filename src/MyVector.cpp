@@ -92,6 +92,20 @@ MyVector& MyVector::erase(size_t idx) {
     return *this;
 }
 
+int& MyVector::at(size_t idx) {
+    if (idx >= count) {
+        throw std::out_of_range("Index is out of range");
+    }
+    return arr[idx];
+}
+
+const int& MyVector::at(size_t idx) const {
+    if (idx >= count) {
+        throw std::out_of_range("Index is out of range");
+    }
+    return arr[idx];
+}
+
 size_t MyVector::power_of_2_minimum(size_t num) const {
     size_t ans = 4;
     while(ans < num) {
