@@ -2,8 +2,10 @@
 
 int main()
 {
-    MyVector v{5, 3, 4, 2};
-    // MyVector v;
+    // Basic Vector testcases
+    MyVector v;
+    v.push(3).push(4).push(10);
+
     const MyVector v2{1, 3, 6, 9, 12};
 
     cout << "My Vector " << (v.is_empty() ? "is empty" : "is not empty") << endl;
@@ -16,4 +18,20 @@ int main()
     cout << v[2] << ' ' << v2[2] << endl;
     cout << v.get_size() << ' ' << v2.get_size() << endl;
     cout << v.get_count() << ' ' << v2.get_count() << endl;
+
+    cout << "-----------------------" << endl;
+
+    // Error throw & catch
+    MyVector error01;
+    try {
+        error01.erase(10);
+    } catch(const exception& e) {
+        cerr << e.what() << endl;
+    }
+
+    try {
+        error01.remove(10);
+    } catch(const exception& e) {
+        cerr << e.what() << endl;
+    }
 }
