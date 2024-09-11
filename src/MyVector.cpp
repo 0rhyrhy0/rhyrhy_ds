@@ -76,14 +76,12 @@ MyVector& MyVector::remove(int value) {
             return *this;
         }
     }
-    // the value was not found, but we're not handling this.
-    return *this;
+    throw std::logic_error("Value was not found.");
 }
 
 MyVector& MyVector::erase(size_t idx) {
     if(idx >= count) {
-        // out of range, also not handling this yet
-        return *this;
+        throw std::out_of_range("Index is out of range.");
     }
 
     for(size_t i=idx ; i<count-1 ; i++) {
