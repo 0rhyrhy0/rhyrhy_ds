@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "MyVector.h"
+#include "MyBST.h"
 // using namespace std;
 using std::cout, std::endl, std::cerr, std::exception;
 
