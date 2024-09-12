@@ -7,7 +7,7 @@ BIN_DIR := bin
 # File lists
 HEADERS := $(wildcard $(HEADER_DIR)/*.h)
 SRCS := $(wildcard $(SRC_DIR)/*.cpp)
-OBJS := $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
+OBJS := $(SRCS:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 
 # Compiler   
 CC := g++
@@ -28,7 +28,7 @@ $(BIN_DIR)/main.exe: $(HEADERS) $(OBJS)
 	@$(CC) -o $@ $^ $(CFLAGS)
 	@echo $@
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(HEADERS)
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp $(HEADERS)
 	@mkdir -p $(@D)
 	@$(CC) -c $< -o $@ $(CFLAGS)
 	@echo $@
