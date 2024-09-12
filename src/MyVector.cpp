@@ -25,6 +25,10 @@ MyVector::MyVector(MyVector&& other) noexcept
     other.arr = nullptr;
 }
 
+MyVector::~MyVector() {
+    delete[] arr;
+}
+
 void MyVector::resize(size_t new_size) {
     if(size == new_size) return;
 

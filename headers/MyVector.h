@@ -32,6 +32,12 @@ public:
     MyVector(MyVector&& other) noexcept;
 
     /**
+     * @brief Destsructor.
+     * Delete `arr`.
+     */
+    ~MyVector();
+
+    /**
      * @brief Push `value` at the end of the vector.
      * @param value The value to be pushed.
      * @return Reference to the updated MyVector.
