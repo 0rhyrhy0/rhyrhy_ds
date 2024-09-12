@@ -1,7 +1,8 @@
 #include "../headers/headers.h"
 
-int main()
-{
+void test_MyVector() {
+    cout << "MyVector tests" << endl;
+    cout << "--------------" << endl;
     // Basic Vector testcases
     MyVector v;
     v.push(3).push(4).push(10);
@@ -48,4 +49,24 @@ int main()
     } catch(const exception& e) { // out_of_range
         cerr << e.what() << endl;
     }
+    cout << "------------------------" << endl;
+    cout << "------------------------" << endl;
+}
+
+void test_MyBST() {
+    cout << "MyBST tests" << endl;
+    cout << "--------------" << endl;
+
+    MyBST* a = new MyBST(8);
+    a->insert(4)->insert(12);
+    // WIP...
+
+    cout << "------------------------" << endl;
+    cout << "------------------------" << endl;
+}
+
+int main()
+{
+    test_MyVector();
+    test_MyBST();
 }
