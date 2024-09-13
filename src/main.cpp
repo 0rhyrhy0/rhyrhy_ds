@@ -59,7 +59,29 @@ void test_MyBST() {
 
     MyBST* a = new MyBST(8);
     a->insert(4)->insert(12);
-    // WIP...
+    a->insert(14);
+
+    cout << "Biggest   : " << a->biggest()->value() << endl;               // 14
+    cout << "Smallest  : " << a->smallest()->value() << endl;              // 4
+    cout << "9 in BST? : " << (a->find(9) ? "Yes" : "No") << endl << endl; // No
+
+    a->in_order_traverse(); cout << endl;
+    a->post_order_traverse(); cout << endl;
+    a->pre_order_traverse(); cout << endl;
+
+    a->insert(16); cout << endl;
+
+    a->in_order_traverse(); cout << endl;
+    a->post_order_traverse(); cout << endl;
+    a->pre_order_traverse(); cout << endl;
+
+    a->remove(12); cout << endl;
+
+    a->in_order_traverse(); cout << endl;
+    a->post_order_traverse(); cout << endl;
+    a->pre_order_traverse(); cout << endl;
+
+    delete a; // ~MyBST
 
     cout << "------------------------" << endl;
     cout << "------------------------" << endl;
@@ -67,6 +89,6 @@ void test_MyBST() {
 
 int main()
 {
-    test_MyVector();
+    // test_MyVector();
     test_MyBST();
 }
